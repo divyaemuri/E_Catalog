@@ -11,8 +11,6 @@ xmlns:form="sap.ui.layout.form"
 xmlns:w="sap.ui.integration.widgets"
 xmlns:l="sap.ui.layout"
 >
-<Page>
-<content>
 <Panel id="panelCSSGrid">
 		
 			<f:GridList id="gridList2" headerText="">
@@ -85,7 +83,7 @@ xmlns:l="sap.ui.layout"
                         </Toolbar>
                    </headerToolbar>
                    <content>
-                        <Table id="globalCatalaogDetails" items="{ path: 'Catalog>/GlobalCatalog' }" autoPopinMode="true" mode="SingleSelectLeft" delete="handleDeleteListItem" growingThreshold="4"  >
+                        <Table id="globalCatalaogDetails" items="{ path: 'Catalog>/GlobalCatalog' }"  mode="SingleSelectLeft" delete="handleDeleteListItem" growingThreshold="4" growingScrollToLoad="false">
                         <items>
                             <ColumnListItem id="itemList">
                             
@@ -102,37 +100,39 @@ xmlns:l="sap.ui.layout"
                             </ColumnListItem>
                         </items>
                         <columns>
-                            <Column id="manufacturerId" importance="High">
-                                
+                            <Column id="manufacturerId">
+                                <header>
                                     <Label text="MANUFACTURER" id="mId" />
-                                
+                                </header>
                             </Column>
-                            <Column  id="materialId" importance="Low">
-                               
+                            <Column  id="materialId">
+                                <header>
                                     <Label text="MATERIAL" id="materialId1"/>
-                               
+                                </header>
                             </Column>
-                            <Column id="familyProductsId" importance="Low">
-                               
+                            <Column id="familyProductsId">
+                                <header>
                                     <Label text="FAMILY PRODUCTS" id="fId"/>
-                                
+                                </header>
                             </Column>
-                            <Column id="standardPriceId" importance="High">
-                               
+                            <Column id="standardPriceId">
+                                <header>
                                     <Label text="STANDARD PRICE" id="sPriceID"/>
-                                
+                                </header>
                             </Column>
                             <Column >
-                               
+                                <header>
                                     <Label text="ACTIONS" />
-                               
+                                </header>
                             </Column>
-                           
+                            <Column >
+                                <header>
+                                    <Label text=" " />
+                                </header>
+                            </Column>
                         </columns>
                         </Table>
                    </content>
                    </Panel>
 	</Panel>
-    </content>
-    </Page>
 </core:FragmentDefinition>
