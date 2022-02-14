@@ -1,0 +1,71 @@
+<mvc:View
+	controllerName="dynamicpageheader.controller.View1"
+	xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:tnt="sap.tnt"
+	height="100%"
+    xmlns:l="sap.ui.layout"
+	class="side-navigation-demo">
+    
+  	<tnt:ToolPage id="toolPage">
+		<tnt:header>
+			<tnt:ToolHeader>
+				<Button
+					id="sideNavigationToggleButton"
+					icon="sap-icon://menu2"
+					type="Transparent"
+					press=".onSideNavButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+				<ToolbarSpacer width="20px" />
+				
+				<tnt:ToolHeaderUtilitySeparator />
+				<ToolbarSpacer>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px" />
+					</layoutData>
+				</ToolbarSpacer>
+				<Button text="User Name" type="Transparent" press=".handleUserNamePress" >
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+			</tnt:ToolHeader>
+		</tnt:header>
+		<tnt:sideContent>
+			<tnt:SideNavigation
+				expanded="true"
+				selectedKey="{/selectedKey}"
+				itemSelect=".onItemSelect">
+				<tnt:NavigationList >
+					<tnt:NavigationListItem text="HOME" icon="sap-icon://home" select=".onPressHomeButton"/>
+                    <tnt:NavigationListItem text="GLOBAL CATALOG" icon="sap-icon://building" select=".onPressGlobalCatalog" />
+                    <tnt:NavigationListItem  text="LOCAL CATALOG" icon="sap-icon://line-chart" select=".onPressLocalCatalog"/>
+                    <tnt:NavigationListItem  text="APPROVALS" icon="sap-icon://arrow-top"/>
+                    <tnt:NavigationListItem text="SETTINGS" icon="sap-icon://action-settings"/>
+				</tnt:NavigationList>
+				<tnt:fixedItem>
+					<tnt:NavigationList >
+						
+					</tnt:NavigationList>
+				</tnt:fixedItem>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<NavContainer id="pageContainer" initialPage="page2">
+				<pages>
+					<ScrollContainer>
+                        <core:Fragment  fragmentName="dynamicpageheader.fragment.LocalCatalog" type="XML"/>
+                        <core:Fragment fragmentName="dynamicpageheader.fragment.GlobalCatalog" type="XML"/>
+                    </ScrollContainer>
+				</pages>
+			</NavContainer>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+
+   
+
+</mvc:View>

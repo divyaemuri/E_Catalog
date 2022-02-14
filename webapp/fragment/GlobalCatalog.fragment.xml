@@ -1,0 +1,138 @@
+<core:FragmentDefinition 
+xmlns="sap.m"
+xmlns:semantic="sap.f.semantic" 
+xmlns:footerbar="sap.ushell.ui.footerbar"
+xmlns:core="sap.ui.core"
+xmlns:f="sap.f"
+xmlns:card="sap.f.cards"
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:grid="sap.ui.layout.cssgrid"
+xmlns:form="sap.ui.layout.form"
+xmlns:w="sap.ui.integration.widgets"
+xmlns:l="sap.ui.layout"
+>
+<Page>
+<content>
+<Panel id="panelCSSGrid">
+		
+			<f:GridList id="gridList2" headerText="">
+			<f:customLayout>
+				<grid:GridBoxLayout boxWidth="10rem" />
+			</f:customLayout>
+
+			<f:GridListItem>
+				<VBox height="100%" class="sapUiSmallMargin">
+					<layoutData>
+						<FlexItemData growFactor="1" shrinkFactor="0" /><!-- Don't shrink below minimum size. Fill space if available. -->
+					</layoutData>
+
+					<core:Icon
+						src="sap-icon://retail-store"
+						size="2rem"
+						color="Default"
+						class="sapUiTinyMarginBottom" />
+					<Title text="DEALERS" wrapping="true" />
+					<Text text="18" wrapping="true" />
+				</VBox>
+			</f:GridListItem>
+<f:GridListItem>
+				<VBox height="100%" class="sapUiSmallMargin">
+					<layoutData>
+						<FlexItemData growFactor="1" shrinkFactor="0" /><!-- Don't shrink below minimum size. Fill space if available. -->
+					</layoutData>
+
+					<core:Icon
+						src="sap-icon://tags"
+						size="2rem"
+						color="Default"
+						class="sapUiTinyMarginBottom" />
+					<Title text="MATERIALS" wrapping="true" />
+					<Text text="24" wrapping="true" />
+				</VBox>
+			</f:GridListItem>
+			<f:GridListItem>
+				<VBox height="100%" class="sapUiSmallMargin">
+					<layoutData>
+						<FlexItemData growFactor="1" shrinkFactor="0" /><!-- Don't shrink below minimum size. Fill space if available. -->
+					</layoutData>
+
+					<core:Icon
+						src="sap-icon://sys-monitor"
+						size="2rem"
+						color="Default"
+						class="sapUiTinyMarginBottom" />
+					<Title text="FAMILY PRODUCTS" wrapping="true" />
+					<Text text="48" wrapping="true" />
+				</VBox>
+			</f:GridListItem>
+		</f:GridList>
+<Panel expandable="true" expanded="true" width="auto" class="sapUiResponsiveMargin">
+                   <headerToolbar>
+                        <Toolbar height="3rem">
+                        <!-- <Title  text="List of Employee Details"></Title> -->
+                        <ToolbarSpacer/>
+                        <Button
+											id="deleteUserButton"
+											icon="sap-icon://delete"
+                                            text="delete"
+                                            type="Emphasized"
+											press=".onDelete">
+											<layoutData>
+												<OverflowToolbarLayoutData priority="NeverOverflow"/>
+											</layoutData>
+										</Button>
+                        <!-- <Button icon="sap-icon://sys-minus" text="Delete Row" type="Reject" press="onDelete"/>  -->
+                        </Toolbar>
+                   </headerToolbar>
+                   <content>
+                        <Table id="globalCatalaogDetails" items="{ path: 'Catalog>/GlobalCatalog' }" autoPopinMode="true" mode="SingleSelectLeft" delete="handleDeleteListItem" growingThreshold="4"  >
+                        <items>
+                            <ColumnListItem id="itemList">
+                            
+                                <cells>
+                                    <Text text="{Catalog>manufacturer}" id="EmpName"/>
+                                    <Text text="{Catalog>material}" id="EmpId"/>
+                                    <Text text="{Catalog>familyProducts}" id="EmpDesignation"/>
+                                    <Text text="{Catalog>standardPrice}" id="EmpDomain"/>    
+                                    <!-- <ObjectNumber number="{Salary}" state="{parts: [{path: 'Salary'}], formatter: '.salaryState'}" /> -->
+                                    <!-- <Button xmlns="sap.m"  id="button0" icon="sap-icon://edit" press="onbuttonpressEdit"/> -->
+                                    <Button text="Details" id="detailId" press=".onDetailButtonPress"/>
+                                                                        
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                        <columns>
+                            <Column id="manufacturerId" importance="High">
+                                
+                                    <Label text="MANUFACTURER" id="mId" />
+                                
+                            </Column>
+                            <Column  id="materialId" importance="Low">
+                               
+                                    <Label text="MATERIAL" id="materialId1"/>
+                               
+                            </Column>
+                            <Column id="familyProductsId" importance="Low">
+                               
+                                    <Label text="FAMILY PRODUCTS" id="fId"/>
+                                
+                            </Column>
+                            <Column id="standardPriceId" importance="High">
+                               
+                                    <Label text="STANDARD PRICE" id="sPriceID"/>
+                                
+                            </Column>
+                            <Column >
+                               
+                                    <Label text="ACTIONS" />
+                               
+                            </Column>
+                           
+                        </columns>
+                        </Table>
+                   </content>
+                   </Panel>
+	</Panel>
+    </content>
+    </Page>
+</core:FragmentDefinition>

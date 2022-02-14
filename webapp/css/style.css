@@ -1,0 +1,43 @@
+/* Enter your custom styles here */
+.sapMFlexBox.demoBox {
+	border-radius: 10px;
+	background-color: #ffffff;
+	text-align: center;
+    
+}
+
+.demoBox .sapMText {
+    padding-top: 10px;
+	color: black;
+}
+.demoBox .sapCoreIcon {
+    padding-right: 40px;
+}
+
+.sapMText.message {
+	font-weight: bold;
+}
+.demoBox1.sapMText {
+    margin-left: 20px;
+}
+.GridDataSample .exampleDiv {
+	height: 7rem;
+	width: 100%;
+	background-color: #A9EAFF;
+}
+
+.GridDataSample .exampleDiv>p,
+.GridDataSample .propertiesDisplay {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.GridDataSample p {
+	margin: 0;
+	text-align: center;
+	line-height: 150%;
+}
+.imageClass.sapCoreIcon {
+    margin-left:30px;
+}

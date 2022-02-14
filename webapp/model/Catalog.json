@@ -1,0 +1,68 @@
+{
+    "GlobalCatalog" :[{
+        "manufacturer":1111,
+        "material":720000,
+        "familyProducts":2222,
+        "standardPrice":"10€"
+    }, {
+        "manufacturer":1111,
+        "material":720001,
+        "familyProducts":2222,
+        "standardPrice":"15€"
+    }, {
+        "manufacturer":1111,
+        "material":720003,
+        "familyProducts":2222,
+        "standardPrice":"11€"
+    }, {
+        "manufacturer":1122,
+        "material":722221,
+        "familyProducts":2222,
+        "standardPrice":"20€"
+    }, {
+        "manufacturer":1231,
+        "material":7203345,
+        "familyProducts":5678,
+        "standardPrice":"10€"
+    }, {
+        "manufacturer":3333,
+        "material":720000,
+        "familyProducts":4567,
+        "standardPrice":"13€"
+    }, {
+        "manufacturer":1155,
+        "material":720000,
+        "familyProducts":1234,
+        "standardPrice":"10€"
+    }, {
+        "manufacturer":1166,
+        "material":720000,
+        "familyProducts":2222,
+        "standardPrice":"10€"
+    },{
+        "manufacturer":1001,
+        "material":720000,
+        "familyProducts":4444,
+        "standardPrice":"10€"
+    },{
+        "manufacturer":1441,
+        "material":720007,
+        "familyProducts":4444,
+        "standardPrice":"10€"
+    },{
+        "manufacturer":1111,
+        "material":720008,
+        "familyProducts":3333,
+        "standardPrice":"10€"
+    },{
+        "manufacturer":1111,
+        "material":720010,
+        "familyProducts":3333,
+        "standardPrice":"10€"
+    }  
+    
+],
+    "LocalCatalog": [{
+        
+    }]
+}
