@@ -30,7 +30,7 @@ xmlns:l="sap.ui.layout"
 						color="Default"
 						class="sapUiTinyMarginBottom" />
 					<Title text="DEALERS" wrapping="true" />
-					<Text text="18" wrapping="true" />
+					<Text text="{=${Catalog>/GlobalCatalog}.length}" wrapping="true" />
 				</VBox>
 			</f:GridListItem>
 <f:GridListItem>
@@ -66,72 +66,73 @@ xmlns:l="sap.ui.layout"
 		</f:GridList>
 <Panel expandable="true" expanded="true" width="auto" class="sapUiResponsiveMargin">
                    <headerToolbar>
-                        <Toolbar height="3rem">
-                        <!-- <Title  text="List of Employee Details"></Title> -->
-                        <ToolbarSpacer/>
-                        <Button
-											id="deleteUserButton"
-											icon="sap-icon://delete"
-                                            text="delete"
-                                            type="Emphasized"
-											press=".onDelete">
-											<layoutData>
-												<OverflowToolbarLayoutData priority="NeverOverflow"/>
-											</layoutData>
-										</Button>
-                        <!-- <Button icon="sap-icon://sys-minus" text="Delete Row" type="Reject" press="onDelete"/>  -->
-                        </Toolbar>
+                        <OverflowToolbar id="otbSubheader">
+                <Title text="Global Catalog Details" level="H2" />
+                <ToolbarSpacer />
+                
+                    <SearchField liveChange="onSearch" width="20%"/>
+                    <Button text="Add" icon="sap-icon://add" type="Transparent" press="onPressAdd" />
+                    <Button  icon="sap-icon://delete" text="Delete"  press="onDelete"/> 
+                    <Button  type="Default" icon="sap-icon://upload" text="Upload" press="onUpload"/>
+                    <Button text="" icon="sap-icon://action-settings" type="Transparent"
+                    press="onPressPersonalization" />
+            </OverflowToolbar>
                    </headerToolbar>
                    <content>
-                        <Table id="globalCatalaogDetails" items="{ path: 'Catalog>/GlobalCatalog' }"  mode="SingleSelectLeft" delete="handleDeleteListItem" growingThreshold="4" growingScrollToLoad="false">
-                        <items>
-                            <ColumnListItem id="itemList">
-                            
-                                <cells>
-                                    <Text text="{Catalog>manufacturer}" id="EmpName"/>
-                                    <Text text="{Catalog>material}" id="EmpId"/>
-                                    <Text text="{Catalog>familyProducts}" id="EmpDesignation"/>
-                                    <Text text="{Catalog>standardPrice}" id="EmpDomain"/>    
-                                    <!-- <ObjectNumber number="{Salary}" state="{parts: [{path: 'Salary'}], formatter: '.salaryState'}" /> -->
-                                    <!-- <Button xmlns="sap.m"  id="button0" icon="sap-icon://edit" press="onbuttonpressEdit"/> -->
-                                    <Button text="Details" id="detailId" press=".onDetailButtonPress"/>
-                                                                        
-                                </cells>
-                            </ColumnListItem>
-                        </items>
-                        <columns>
-                            <Column id="manufacturerId">
-                                <header>
-                                    <Label text="MANUFACTURER" id="mId" />
-                                </header>
+                   <Table id="idProductsTable" autoPopinMode="true"  mode= "MultiSelect"  items="{ path: 'Catalog>/GlobalCatalog' }">
+                      		
+						
+						<columns>
+							<Column width="12em">
+                            <header>
+                            <Text text="MANUFACTURER"/>
+                            </header>
+								
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="MATERIAL"/>
+							</Column>
+							<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+								<Text text="FAMILY PRODUCTS"/>
+							</Column>
+							<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+								<Text text=" STANDARD PRICE"/>
+							</Column>
+							<!-- <Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+								<Text text="{i18n>customerOrders}"/>
+							</Column>
+							<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+								<Text text="{i18n>wishlist}"/>
+							</Column>
+							<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+								<Text text="{i18n>cart}"/>
+							</Column>
+							<Column hAlign="End">
+								<Text text="{i18n>customerstatus}"/>
+							</Column> -->
+                            <Column hAlign="End">
+                                <Text text=" "/>
                             </Column>
-                            <Column  id="materialId">
-                                <header>
-                                    <Label text="MATERIAL" id="materialId1"/>
-                                </header>
-                            </Column>
-                            <Column id="familyProductsId">
-                                <header>
-                                    <Label text="FAMILY PRODUCTS" id="fId"/>
-                                </header>
-                            </Column>
-                            <Column id="standardPriceId">
-                                <header>
-                                    <Label text="STANDARD PRICE" id="sPriceID"/>
-                                </header>
-                            </Column>
-                            <Column >
-                                <header>
-                                    <Label text="ACTIONS" />
-                                </header>
-                            </Column>
-                            <Column >
-                                <header>
-                                    <Label text=" " />
-                                </header>
-                            </Column>
-                        </columns>
-                        </Table>
+						</columns>
+						<items>
+							<ColumnListItem >
+								<cells>
+									<ObjectIdentifier text="{Catalog>manufacturer}"/>
+									<Text text="{Catalog>material}"/>
+									<Text text="{Catalog>familyProducts}"/>
+									<Text text="{Catalog>standardPrice}"/>
+                                    <Button text="Details" press=".onItemPress"/>
+                                    
+									<!-- <Text text="{CustomerDetails>orders}"/>
+									<Text text="{CustomerDetails>wishlist}"/>
+									<Text text="{CustomerDetails>cart}"/> -->
+									<!--<Text id="text1"  text="{path:'CustomerDetails>status' , formatter:'.Formatter.statusState'}"/>-->
+									<!-- <ObjectNumber number="{CustomerDetails>status}" state="{ path: 'CustomerDetails>status', formatter: '.Formatter.statusState' }"/> -->
+									<!--<ObjectNumber number="{CustomerDetails>status}"state="{path: 'status',formatter: '.Formatter.statusState'}"/>-->
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
                    </content>
                    </Panel>
 	</Panel>

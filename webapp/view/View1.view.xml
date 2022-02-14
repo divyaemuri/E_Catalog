@@ -43,8 +43,8 @@
 				<tnt:NavigationList >
 					<tnt:NavigationListItem text="HOME" icon="sap-icon://home" select=".onPressHomeButton"/>
                     <tnt:NavigationListItem text="GLOBAL CATALOG" icon="sap-icon://building" select=".onPressGlobalCatalog" />
-                    <tnt:NavigationListItem  text="LOCAL CATALOG" icon="sap-icon://line-chart" select=".onPressLocalCatalog"/>
-                    <tnt:NavigationListItem  text="APPROVALS" icon="sap-icon://arrow-top"/>
+                    <tnt:NavigationListItem  text="LOCAL CATALOG" icon="sap-icon://area-chart" select=".onPressLocalCatalog"/>
+                    <tnt:NavigationListItem  text="APPROVALS"  icon="sap-icon://cart-approval"/>
                     <tnt:NavigationListItem text="SETTINGS" icon="sap-icon://action-settings"/>
 				</tnt:NavigationList>
 				<tnt:fixedItem>
@@ -57,7 +57,10 @@
 		<tnt:mainContents>
 			<NavContainer id="pageContainer" initialPage="page2">
 				<pages>
-					<ScrollContainer>
+					<ScrollContainer height="100%"
+                    width="100%"
+                    vertical="true"
+                    focusable="true">
                         <core:Fragment  fragmentName="dynamicpageheader.fragment.LocalCatalog" type="XML"/>
                         <core:Fragment fragmentName="dynamicpageheader.fragment.GlobalCatalog" type="XML"/>
                     </ScrollContainer>

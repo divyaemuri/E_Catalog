@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns="sap.m" 	xmlns:f="sap.ui.layout.form" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:core="sap.ui.core">
+	
+        <Dialog title="My Dialog">
+                                <content>
+                                               <f:SimpleForm id="SimpleFormToolbar"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false"
+			ariaLabelledBy="Title1" >
+			<f:toolbar>
+				<Toolbar id="TB1">
+					<Title id="Title1" text="In Detailed View of Global Catalog"/>
+					<ToolbarSpacer />
+				</Toolbar>
+			</f:toolbar>
+			<f:content>
+				<Label text="Manufacturer" />
+				<Input value="{Catalog>manufacturer}" />
+				<Label text="Material" />
+				<Input value="{Catalog>material}">
+				</Input>
+				<Label text="Family Products" />
+				<Input value="{Catalog>familyProducts}"/>
+				<Label text="Standard Price" />
+				<Input value="{Catalog>standardPrice}"/>
+			</f:content>
+		</f:SimpleForm>
+                                </content>
+                                <endButton>
+                                                <Button text="Close" press="onClose" />
+                                </endButton>
+                </Dialog>
+</core:FragmentDefinition>

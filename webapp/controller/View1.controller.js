@@ -67,8 +67,47 @@ sap.ui.define([
         onPressGlobalCatalog: function () {
             this.getView().byId("LabelId").setVisible(false);
             this.getView().byId("panelCSSGrid").setVisible(true);
-        }
-          
+        },
+        // onItemPress: function (oEvent) {
+			
+		// 	// var oItem = oEvent.getSource();
+		// 	// var oCtx = oItem.getBindingContext("Catalog");
+		// 	// var sPath = oCtx.getPath();
+		// 	if(!this._Dialog) {
+		// 	this._Dialog = sap.ui.xmlfragment(this.createId("simpleForm"), "dynamicpageheader.fragment.DetailedView",
+		// 		this);
+		// 	this.getView().addDependent(this._Dialog);
+		// 	this._Dialog.open();
+		// 	// this.byId(sap.ui.core.Fragment.createId("simpleForm", "SimpleFormDisplay354")).bindElement({
+		// 	// 	path: sPath,
+		// 	// 	model: "Catalog"
+		// 	// });
+		// 	}
+
+		// }
+
+        onItemPress: function (oEvent) {
+            var oItem = oEvent.getSource();
+			var oCtx = oItem.getBindingContext("Catalog");
+			var sPath = oCtx.getPath();
+            if(!this._Dialog) {
+            this._Dialog = sap.ui.xmlfragment(this.createId("SimpleFormToolbar12"), "dynamicpageheader.fragment.DetailedView",
+            this);
+        this.getView().addDependent(this._Dialog);
+            }
+        this._Dialog.open();
+        this.byId(sap.ui.core.Fragment.createId("SimpleFormToolbar12", "SimpleFormToolbar")).bindElement({
+            		path: sPath,
+            		model: "Catalog"
+            	});
+            
+		},
+        
+        onClose: function () {
+			this._Dialog.close();
+			this._Dialog.destroy(true);
+			this._Dialog=undefined;
+		},
             
 		});
 	});
